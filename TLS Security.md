@@ -1,0 +1,4 @@
+# TLS Security 1: What Is SSL/TLS
+Secure Sockets Layer (SSL) and Transport Layer Security (TLS) are cryptographic security protocols. They are used to make sure that network communication is secure. Their main goals are to provide data integrity and communication privacy. The SSL protocol was the first protocol designed for this purpose and TLS is its successor. SSL is now considered obsolete and insecure (even its latest version), so modern browsers such as Chrome or Firefox use TLS instead.
+
+SSL and TLS are commonly used by web browsers to protect connections between web applications and web servers. Many other TCP-based protocols use TLS/SSL as well, including email (SMTP/POP3), instant messaging (XMPP), FTP, VoIP, VPN, and others. Typically, when a service uses a secure connection the letter S is appended to the protocol name, for example, HTTPS, SMTPS, FTPS, SIPS. In most cases, SSL/TLS implementations are based on the OpenSSL library.

