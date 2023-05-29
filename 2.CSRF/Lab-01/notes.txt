@@ -1,0 +1,14 @@
+Lab #1 - CSRF vulnerability with no defenses
+
+Vulnerable parameter: email change functionality
+
+End goals: Exploit the CSRF vulnerability and change the email address
+
+Creds: wiener * peter
+
+Analysis:
+In order for a CSRF attack to be possible:
+1. A relevant action - email change functionality
+2. Cookie based session handling - session cookie
+3. No unpredictable request parameters - satisfied
+

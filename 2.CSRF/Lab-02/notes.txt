@@ -1,0 +1,17 @@
+Lab #1 - CSRF vulnerability where token validation on request method
+
+Vulnerable parameter: email change functionality
+
+End goals: Exploit the CSRF vulnerability and change the email address
+
+Creds: wiener * peter
+
+Analysis:
+In order for a CSRF attack to be possible:
+1. A relevant action - email change functionality
+2. Cookie based session handling - session cookie
+3. No unpredictable request parameters - Request method can be changed to GET which does not require CSRF token
+
+Testing CSRF Tokens:
+1. Change the request method from POST to GET
+
