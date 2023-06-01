@@ -1,0 +1,19 @@
+Lab #8 - CSRF with broken referer validation
+
+Vulnerable parameter - email change functionality
+
+Goal - exploit CSRF to change email address
+
+Creds - wiener:peter
+
+Analysis - 
+
+In order for a CSRF attack to be possible:
+1. A relevant action - change a user's email
+2. Cookie based session handling - session cookie
+3. No unpredictable request parameters - no CSRF token
+
+
+Testing Referer header for CSRF attacks:
+1. Remove the Referer header - referer defense mechanism is not properly implemented.
+2. Check which portion of the referer header is the application validating - https://hacked-domain.com/?victim-domain.com

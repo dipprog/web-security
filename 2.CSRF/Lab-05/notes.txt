@@ -1,0 +1,33 @@
+Lab #5 - CSRF where token is tied to non-session cookie
+
+Vulnerable parameter - email change functionality
+
+Goal - exploit CSRF to change email address
+
+Creds - wiener:peter, carlos:montoya(attacker credentials)
+
+Analysis - 
+
+In order for a CSRF attack to be possible:
+1. A relevant action - change a user's email
+2. Cookie based session handling - session cookie
+3. No unpredictable request parameters - CSRF is not tied to user's token
+
+Testing CSRF Tokens:
+1. Remove the CSRF token and see if application accepts request
+2. Change the request method from POST to GET
+3. See if CSRF token is tied to user session
+
+Testing CSRF Tokens and CSRF cookies:
+1. Check if the CSRF token is tied to the CSRF cookie
+    - Submit an invalid csrf token
+    - Submit a valid csrf token from another user
+2. Submit valid csrf token and cookie from another user
+    - csrf token, csrfkey cookie > Working
+
+=> session cookie and csrf defense cookie are not tied together
+
+
+In order to exploit this vulnerabilities, we need to perform 2 things -
+1. Inject an http cookie `csrfkey` in the user's session (HTTP header injection) - in the search product, we can set cookie
+2. Send csrf attack to the victim with a know csrf token

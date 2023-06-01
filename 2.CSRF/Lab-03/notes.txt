@@ -1,0 +1,19 @@
+Lab #3 - CSRF attack where token validation depends on token being present
+
+Vulnerable parameter - email change functionality
+
+Goal - exploit CSRF to change email address
+
+Creds - wiener:peter 
+
+Analysis - 
+
+In order for a CSRF attack to be possible:
+1. A relevant action - change a user's email
+2. Cookie based session handling - session cookie
+3. No unpredictable request parameters - CSRF token is not mandatory
+
+Testing CSRF Tokens:
+1. Remove the CSRF token and see if application accepts request
+    - If token is present, it will check to see whether it is valid or not. If not present, it will not do the checking.
+2. Change the request method from POST to GET
