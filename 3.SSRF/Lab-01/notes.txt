@@ -1,0 +1,11 @@
+Lab #1 - Basic SSRF  against the local server
+
+Vulnerable parameter - stock check functionality
+
+Goal - change the stock check url to access the admin interface at http://localhost/admin and delete the user 'carlos'
+
+Analysis -
+
+Localhost - http://localhost/
+Admin interface - http://localhost/admin
+Delete carlos - http://localhost/admin/delete?username=carlos
