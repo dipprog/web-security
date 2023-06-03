@@ -1,9 +1,0 @@
-Lab 17 - SQL injeaction with filter bypass via XML encoding
-
-Vulnerable parameter: 
-
-End goals:
-Exploit SQL injeaction to retrieve the admin user's credentials from the users table and log into their account.
-
-Analysis:
-1 UNION SELECT username || '*' || password FROM users

