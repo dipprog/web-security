@@ -1,0 +1,15 @@
+Lab #3 - CORS vulnerability with internal network pivot attack
+
+Target Goal - 
+1. Use js to locate an endpoint on the local network(192.168.0.0/24 port 8080)
+2. Exploit CORS misconfiguration to delete user carlos
+Creds - wiener:peter
+
+Analysis:
+
+Testing for CORS misconfigurations:
+1. Scan the local network(192.168.0.0/24) for endpoints that have port 8080 open
+2. Create a CORS-based attack to delete the carlos user.
+
+
+
