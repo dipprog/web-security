@@ -1,4 +1,4 @@
-Lab #3 - CORS vulnerability with internal network pivot attack
+Lab #4 - CORS vulnerability with internal network pivot attack
 
 Target Goal - 
 1. Use js to locate an endpoint on the local network(192.168.0.0/24 port 8080)
