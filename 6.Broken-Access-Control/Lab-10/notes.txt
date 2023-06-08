@@ -1,0 +1,12 @@
+Lab #10 - User ID controlled by request parameter with password disclosure
+
+Target Goal:- Retrieve the administrator's password, then use it to delete carlos
+
+Creds:- weiner:peter 
+
+Steps to exploit:-
+1. Access administrator page using end-point '/my-account?id=administrator'
+2. Find the administrator password in the response password's value
+3. Login as administrator
+4. Go to Admin panel
+5. Delete the carlos user 

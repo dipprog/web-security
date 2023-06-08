@@ -1,0 +1,8 @@
+Lab #6 - Method-based access control can be circumvented
+
+Target Goal: Exploit the flawed access controls to promote user to become an administrator
+
+Analysis: 
+
+Admin panel in administrator has a change admin role fuctionality with endpoint
+"/admin-roles". 

@@ -1,0 +1,7 @@
+Lab #7 - User ID controlled by request parameter 
+
+Target Goal:-  Obtain the API key for the user carlos and submit it as the solution
+
+Creds:- wiener:peter 
+
+Steps:- 
