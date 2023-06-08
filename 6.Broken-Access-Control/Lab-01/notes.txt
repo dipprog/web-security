@@ -1,0 +1,7 @@
+Lab #1 - Unprotected admin function
+
+Target Goal: Find the admin panel and delete the user carlos
+
+Analysis:
+1. Check if /robots.txt file have any admin page link
+2. Try to direclty access the admin page

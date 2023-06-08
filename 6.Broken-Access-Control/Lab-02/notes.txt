@@ -1,0 +1,8 @@
+Lab #2 - Unprotected admin functionality with unpredictable url 
+
+Target Goal: Find the admin panel and delete the user carlos
+
+Analysis:
+1. Scan through the response of home page and try to find admin page in
+any leftover comment or script
+2. Try to access the admin page
