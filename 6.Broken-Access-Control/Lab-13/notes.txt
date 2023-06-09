@@ -1,0 +1,5 @@
+Lab #13 - Referer-based access control
+
+Target Goal:- Exploit the flawed access controls to promote yourself to become an administrator.
+
+Creds:- administrator:admin, wiener:peter

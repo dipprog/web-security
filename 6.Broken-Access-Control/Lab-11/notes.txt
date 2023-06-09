@@ -1,0 +1,9 @@
+Lab #11 - Insecure direct object references
+
+Target Goal:- Find the password for the user carlos, and logging into his/her account
+
+Steps to exploit:-
+1. Visit live_chat link
+2. Download the transcript file
+3. Observe that the download transcript has a static link
+4. Try to access it chat history to find password
